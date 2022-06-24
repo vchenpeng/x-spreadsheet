@@ -171,7 +171,7 @@ export default class Bottombar {
     return [-1];
   }
 
-  clickSwap2(item) {
+  clickSwap2 (item) {
     const index = this.items.findIndex(it => it === item);
     this.clickSwap(item);
     this.activeEl.toggle();

@@ -1227,9 +1227,10 @@ export default class DataProxy {
 
   getData() {
     const {
-      name, freeze, styles, merges, rows, cols, validations, autoFilter,
+      key, name, freeze, styles, merges, rows, cols, validations, autoFilter,
     } = this;
     return {
+      key,
       name,
       freeze: xy2expr(freeze[1], freeze[0]),
       styles,
