@@ -242,6 +242,7 @@ body {
   border: 2px solid #4b89ff;
   background: rgba(75, 137, 255, 0.1);
   z-index: 5;
+  box-sizing: content-box;
 }
 .x-spreadsheet-selector .x-spreadsheet-selector-clipboard,
 .x-spreadsheet-selector .x-spreadsheet-selector-autofill {

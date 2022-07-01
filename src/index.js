@@ -99,6 +99,8 @@ class Spreadsheet {
   switchSheet (index) {
     const d = this.datas[index];
     this.sheet.resetData(d);
+    const item = this.bottombar.items[index];
+    this.bottombar.clickSwap2(item);
   }
 
   getData () {
