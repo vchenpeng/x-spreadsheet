@@ -284,21 +284,44 @@ body {
   opacity: 0.9;
   z-index: 12;
   &.horizontal {
+    height: 13px;
     right: 15px;
     overflow-x: scroll;
     overflow-y: hidden;
+    background-color: transparent;
+    &::-webkit-scrollbar {
+      background: transparent;
+      height: 13px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-clip: padding-box;
+      background-color: #d6d6d6;
+      border: 3px solid transparent;
+      border-radius: 20px;
+      height: 13px;
+    }
     > div {
-      height: 1px;
-      background: #ddd;
+      height: 13px;
     }
   }
   &.vertical {
+    width: 13px;
     bottom: 15px;
     overflow-x: hidden;
     overflow-y: scroll;
+    background: transparent;
+    &::-webkit-scrollbar {
+      background: transparent;
+      width: 13px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-clip: padding-box;
+      background-color: #d6d6d6;
+      border: 3px solid transparent;
+      border-radius: 20px;
+    }
     > div {
-      width: 1px;
-      background: #ddd;
+      height: 13px;
     }
   }
   &:hover {
@@ -423,7 +446,7 @@ body {
   cursor: default;
   text-align: left;
   overflow: hidden;
-
+  box-sizing: content-box;
   &.disabled {
     pointer-events: none;
     opacity: 0.5;
@@ -559,7 +582,7 @@ body {
 
 .@{css-prefix}-toolbar, .@{css-prefix}-bottombar {
   height: 40px;
-  padding: 0 30px;
+  // padding: 0 30px;
   text-align: left;
   background: #f5f6f7;
   display: flex;
@@ -621,7 +644,6 @@ body {
 
 .@{css-prefix}-toolbar {
   border-bottom: 1px solid #e0e2e4;
-
   .@{css-prefix}-toolbar-btns {
     display: inline-flex;
   }

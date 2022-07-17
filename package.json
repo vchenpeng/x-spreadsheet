@@ -1,6 +1,6 @@
 {
   "name": "@sandload/x-data-spreadsheet",
-  "version": "0.0.1",
+  "version": "0.0.5",
   "description": "a javascript xpreadsheet",
   "types": "src/index.d.ts",
   "main": "src/index.js",
@@ -26,14 +26,14 @@
     ]
   },
   "scripts": {
-    "dev": "webpack-dev-server --open --config build/webpack.dev.js",
+    "dev": "webpack-dev-server --open --config build/webpack.dev.js --watch",
     "build": "webpack --config build/webpack.prod.js",
     "build-locale": "webpack --config build/webpack.locale.js",
     "lint": "./node_modules/eslint/bin/eslint.js src",
     "test": "nyc ./node_modules/mocha/bin/mocha --require @babel/register --recursive test",
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov -t 31ecdb12-8ecb-46f7-a486-65c2516307dd",
     "postinstall": "opencollective-postinstall",
-    "deploy": "npm run build && npm publish"
+    "deploy": "npm run build && npm publish --access public"
   },
   "keywords": [
     "javascript",
