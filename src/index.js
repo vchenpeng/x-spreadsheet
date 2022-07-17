@@ -18,7 +18,7 @@ class Spreadsheet {
       targetEl = document.querySelector(selectors);
     }
     this.bottombar = this.options.showBottomBar ? new Bottombar(() => {
-      let hasAddFn = this.sheet.eventMap.current.get('add')
+      const hasAddFn = this.sheet.eventMap.current.get('add');
       if (hasAddFn) {
         this.sheet.trigger('add');
       } else {
@@ -47,7 +47,7 @@ class Spreadsheet {
     }
   }
 
-  addSheet (name, active = true, ops = {}) {
+  addSheet(name, active = true, ops = {}) {
     const n = name || `sheet${this.sheetIndex}`;
     const d = new DataProxy(n, this.options);
     d.key = ops.key || n;
@@ -63,9 +63,9 @@ class Spreadsheet {
     return d;
   }
 
-  deleteSheet () {
+  deleteSheet() {
     if (this.bottombar === null) return;
-    let hasDelFn = this.sheet.eventMap.current.get('delete');
+    const hasDelFn = this.sheet.eventMap.current.get('delete');
     const [oldIndex, nindex] = this.bottombar.deleteItem();
     if (oldIndex >= 0) {
       this.datas.splice(oldIndex, 1);
@@ -75,7 +75,7 @@ class Spreadsheet {
     }
   }
 
-  loadData (data) {
+  loadData(data) {
     const ds = Array.isArray(data) ? data : [data];
     if (this.bottombar !== null) {
       this.bottombar.clear();
@@ -85,7 +85,7 @@ class Spreadsheet {
       for (let i = 0; i < ds.length; i += 1) {
         const it = ds[i];
         const nd = this.addSheet(it.name, i === 0, {
-          key: it.key
+          key: it.key,
         });
         nd.setData(it);
         if (i === 0) {
@@ -96,51 +96,51 @@ class Spreadsheet {
     return this;
   }
 
-  switchSheet (index) {
+  switchSheet(index) {
     const d = this.datas[index];
     this.sheet.resetData(d);
     const item = this.bottombar.items[index];
     this.bottombar.clickSwap2(item);
   }
 
-  getData () {
+  getData() {
     return this.datas.map(it => it.getData());
   }
 
-  cellText (ri, ci, text, sheetIndex = 0) {
+  cellText(ri, ci, text, sheetIndex = 0) {
     this.datas[sheetIndex].setCellText(ri, ci, text, 'finished');
     return this;
   }
 
-  cell (ri, ci, sheetIndex = 0) {
+  cell(ri, ci, sheetIndex = 0) {
     return this.datas[sheetIndex].getCell(ri, ci);
   }
 
-  cellStyle (ri, ci, sheetIndex = 0) {
+  cellStyle(ri, ci, sheetIndex = 0) {
     return this.datas[sheetIndex].getCellStyle(ri, ci);
   }
 
-  reRender () {
+  reRender() {
     this.sheet.table.render();
     return this;
   }
 
-  on (eventName, func) {
+  on(eventName, func) {
     this.sheet.on(eventName, func);
     return this;
   }
 
-  validate () {
+  validate() {
     const { validations } = this.data;
     return validations.errors.size <= 0;
   }
 
-  change (cb) {
+  change(cb) {
     this.sheet.on('change', cb);
     return this;
   }
 
-  static locale (lang, message) {
+  static locale(lang, message) {
     locale(lang, message);
   }
 }

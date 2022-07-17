@@ -18,6 +18,8 @@
 </p>
 
 ## Document
+
+基于原有x-spreadsheet-doc拓展了相关属性、事件
 * en
 * [zh-cn 中文](https://hondrytravis.github.io/x-spreadsheet-doc/)
 
@@ -34,7 +36,7 @@
 ## NPM
 
 ```shell
-npm install x-data-spreadsheet
+npm install @sandload/x-data-spreadsheet
 ```
 
 ```html
