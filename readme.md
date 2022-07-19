@@ -1,15 +1,16 @@
 # x-spreadsheet
 
-[![npm package](https://img.shields.io/npm/v/x-data-spreadsheet.svg)](https://www.npmjs.org/package/x-data-spreadsheet)
-[![NPM downloads](http://img.shields.io/npm/dm/x-data-spreadsheet.svg)](https://npmjs.org/package/x-data-spreadsheet)
-[![NPM downloads](http://img.shields.io/npm/dt/x-data-spreadsheet.svg)](https://npmjs.org/package/x-data-spreadsheet)
-[![Build passing](https://travis-ci.org/myliang/x-spreadsheet.svg?branch=master)](https://travis-ci.org/myliang/x-spreadsheet)
-[![codecov](https://codecov.io/gh/myliang/x-spreadsheet/branch/master/graph/badge.svg)](https://codecov.io/gh/myliang/x-spreadsheet)
+[![npm package](https://img.shields.io/npm/v/@sandload/x-data-spreadsheet.svg)](https://www.npmjs.org/package/@sandload/x-data-spreadsheet)
+[![NPM downloads](http://img.shields.io/npm/dm/@sandload/x-data-spreadsheet.svg)](https://npmjs.org/package/@sandload/x-data-spreadsheet)
+[![NPM downloads](http://img.shields.io/npm/dt/@sandload/x-data-spreadsheet.svg)](https://npmjs.org/package/@sandload/x-data-spreadsheet)
 ![GitHub](https://img.shields.io/github/license/myliang/x-spreadsheet.svg)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/myliang/x-spreadsheet.svg)
-[![Join the chat at https://gitter.im/x-datav/spreadsheet](https://badges.gitter.im/x-datav/spreadsheet.svg)](https://gitter.im/x-datav/spreadsheet?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/vchenpeng/x-spreadsheet.svg)
 
 > A web-based JavaScript spreadsheet
+
+## Introduction
+
+基于原 `x-data-spreadsheet` 拓展了相关属性、事件。
 
 <p align="center">
   <a href="https://github.com/myliang/x-spreadsheet">
@@ -19,7 +20,6 @@
 
 ## Document
 
-基于原有x-spreadsheet-doc拓展了相关属性、事件
 * en
 * [zh-cn 中文](https://hondrytravis.github.io/x-spreadsheet-doc/)
 
@@ -132,8 +132,8 @@ s.cellStyle(ri, ci);
 ## Internationalization
 ```javascript
 // npm 
-import Spreadsheet from 'x-data-spreadsheet';
-import zhCN from 'x-data-spreadsheet/dist/locale/zh-cn';
+import Spreadsheet from '@sandload/x-data-spreadsheet';
+import zhCN from '@sandload/x-data-spreadsheet/dist/locale/zh-cn';
 
 Spreadsheet.locale('zh-cn', zhCN);
 new Spreadsheet(document.getElementById('xss-demo'));
@@ -181,7 +181,7 @@ new Spreadsheet(document.getElementById('xss-demo'));
 ## Development
 
 ```sheel
-git clone https://github.com/myliang/x-spreadsheet.git
+git clone https://github.com/vchenpeng/x-spreadsheet.git
 cd x-spreadsheet
 npm install
 npm run dev
